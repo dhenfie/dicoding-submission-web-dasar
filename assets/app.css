@@ -1,0 +1,385 @@
+* {
+    box-sizing: border-box;
+}
+
+ul li {
+    list-style-type: none;
+    margin-left: -15px;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    background-color: #efefef;
+    color: #333333;
+}
+
+a,
+a:link,
+a:visited,
+a:hover {
+    text-decoration: none;
+    color: #3d8faf;
+}
+
+
+/**
+ ---- CSS style header dan .navigation
+ */
+
+.header {
+    padding: 10px;
+}
+
+.header .jumbotron {
+    text-align: center;
+}
+
+.header .jumbotron h1 {
+    font-size: 2em;
+}
+
+.header .jumbotron p {
+    font-family: 'Delius', cursive;
+    font-size: 1.2em;
+}
+
+.navigation {
+    margin-top: 35px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 6px 6px 10px 6px #dfdfdf;
+
+}
+
+.navigation .navigation-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.navigation-item .nav {
+    display: none;
+    margin-left: -20px;
+    font-weight: bold;
+}
+
+.navigation-item .nav li {
+    padding-top: 20px;
+}
+
+.navigation-item .nav li a {
+    color: #333333;
+}
+
+.navigation-item .nav span {
+    margin-right: 5px;
+}
+
+/* nav show */
+.navigation-item .nav.open {
+    display: block;
+}
+
+/**
+ --- CSS Header dan navigation untuk screen > 640
+ */
+@media screen and (min-width:640px) {
+    .header {
+        padding: 0;
+    }
+
+    .header .navigation {
+        border-radius: 0;
+    }
+
+    .navigation .toggle-navbar {
+        display: none;
+    }
+
+    .navigation .navigation-item {
+        width: auto;
+        flex-direction: row;
+    }
+
+    .navigation .switch-theme {
+        order: 2;
+    }
+
+    .navigation-item .nav,
+    .navigation-item .nav.open {
+        display: block;
+        margin-left: -25px;
+    }
+
+    .navigation-item .nav li {
+        display: inline-block;
+        padding-top: 0;
+        margin-right: 50px;
+    }
+
+    .navigation-item li span {
+        display: none;
+    }
+}
+
+/**
+---- CSS untuk content utaman
+*/
+.main {
+    padding: 10px;
+}
+
+.main .posts h1 {
+    border-bottom: 1px solid #cccccc;
+    padding: 10px;
+    font-size: 1.3em;
+}
+
+.main .posts {
+    margin-top: 35px;
+}
+
+.posts .article {
+    background-color: #ffffff;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.article .article-thumbnail img {
+    width: calc(100% + 20px);
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-top: -10px;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 1px solid #efefef;
+}
+
+.article .article-meta {
+    padding: 0 10px;
+    margin-bottom: 10px;
+}
+
+.article .article-meta h2 {
+    text-transform: uppercase;
+    word-wrap: break-word;
+    line-height: 1.5;
+}
+
+.article .article-meta .meta-content {
+    font-size: small;
+}
+
+.article .article-meta .meta-content span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.article .article-content {
+    line-height: 1.5;
+    letter-spacing: 1px;
+    word-wrap: break-word;
+    word-break: break-all;
+    padding: 15px;
+}
+
+.article .tags {
+    margin-top: 10px;
+    background-color: #ababab;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 5px 8px;
+    text-transform: uppercase;
+}
+
+.article .tags a {
+    color: #ffffff;
+}
+
+.article .article-content::first-letter {
+    text-transform: uppercase;
+    font-size: x-large;
+}
+
+.pagination {
+    margin: 10px 0;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.pagination .pagination-item {
+    display: inline-block;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    color: #333333;
+}
+
+.pagination .pagination-item.active {
+    background-color: #333333;
+    color: #ababab;
+}
+
+/**
+---- CSS untuk content utama untuk layar medium dan lg
+*/
+@media screen and (min-width: 639px) {
+    .main {
+        max-width: calc(100% - 15%);
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (min-width: 980px) {
+    .main {
+        max-width: calc(100% - 15%);
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 30px;
+    }
+
+    .main .posts {
+        flex-basis: 70%;
+    }
+
+    .main .sidebar {
+        flex-basis: 30%;
+    }
+}
+
+
+/** 
+---- CSS Sidebar 
+*/
+.sidebar {
+    margin-top: 35px;
+}
+
+.sidebar .card {
+    background-color: #ffffff;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card .card-label {
+    font-size: 2em;
+    padding: 10px;
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+}
+
+.card .card-image {
+    padding: 30px 10px;
+}
+
+.card .card-image img {
+    filter: sepia(50%);
+    object-fit: cover;
+    width: 225px;
+    height: 225px;
+    border-radius: 50%;
+}
+
+.card .card-header {
+    font-size: .8em;
+    text-transform: uppercase;
+}
+
+.card .card-header .card-author {
+    font-weight: bold;
+    color: #4A3F35;
+    text-align: center;
+}
+
+.card .card-header .social-link {
+    margin-left: -15px;
+    display: flex;
+    gap: 30px;
+}
+
+.card .card-header .social-link a {
+    color: #333333;
+}
+
+.card .card-body {
+    padding: 20px;
+    font-family: 'Delius', cursive;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+.copyright {
+    background-color: #333333;
+    color: #efefef;
+    text-align: center;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+/** dark theme **/
+body.dark {
+    background-color: #2F2519;
+    color: #ababab;
+}
+
+body.dark .header > .navigation {
+    background-color: #4A3F35;
+    box-shadow: none;
+}
+
+body.dark .header > .navigation > .navigation-item li a {
+    color: #ababab;
+}
+
+body.dark .posts .article {
+    background-color: #4A3F35;
+}
+
+body.dark .posts .article .article-meta h2 a {
+    color: #efefef;
+}
+
+body.dark .posts .article .tags {
+    background-color: #2F2519;
+    color: #ababab;
+}
+
+body.dark .posts .pagination .pagination-item {
+    background-color: #4A3F35;
+}
+
+body.dark .posts .pagination .pagination-item a {
+    color: #ababab;
+}
+
+body.dark .posts .pagination .pagination-item.active {
+    background-color: #ffffff;
+    color: #333333;
+}
+
+body.dark .sidebar .card {
+    background-color: #4A3F35;
+}
+
+body.dark .sidebar .card .card-header .card-author  {
+    color: #ababab;
+}
+
+body.dark .sidebar .card .card-header .social-link a {
+    color: #ababab;
+}
+
+body.dark .copyright {
+    background-color: #4A3F35;
+    color: #ababab;
+}
